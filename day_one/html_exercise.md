@@ -12,5 +12,5 @@ Remember, you want all of your page content to go inside your `body` tags. Pleas
 
 ### Useful Links
 
-[Lorem Ipsum Generator](http://www.lipsum.com/feed/html)
-[List of HTML5 elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
+* [Lorem Ipsum Generator](http://www.lipsum.com/feed/html)
+* [List of HTML5 elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
