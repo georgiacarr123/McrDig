@@ -133,3 +133,10 @@ Don't feel as the driver that you have no input. If you disagree with what your 
 
 If, as a navigator, you are unsure of what to tell your driver to do, then ask your driver if they have an approach they would take and try to guide them off of that approach. Don't however allow the driver to start coding without your instruction.
 ***
+
+### Challenge
+
+Encapsulate your code inside a function, and fire that function when a user presses a button.
+
+[JS Functions on W3Schools](https://www.w3schools.com/js/js_functions.asp)
+[Event Listeners in JavaScript](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
