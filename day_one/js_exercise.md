@@ -213,6 +213,6 @@ Encapsulate your code inside a function, and fire that function when a user pres
 * [JS Functions on W3Schools](https://www.w3schools.com/js/js_functions.asp)
 * [Event Listeners in JavaScript](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 
-## Another Challenge
+### One more challenge
 
 * [FizzBuzz](fizzbuzz/exercise.md)
