@@ -35,7 +35,7 @@ To add JavaScript to the HTML document, you can add `script` tags inside the `bo
 
 ```html
 <script type="text/javascript">
-	// JavaScript code goes here
+  // JavaScript code goes here
 </script>
 ```
 
@@ -164,9 +164,9 @@ var fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:'
 var celsius = ((fahrenheit - 32) * 5) / 9
 
 if (isNaN(celsius)) {
-	alert('The converter only accepts Number values. Please refresh your page and try again.')
+  alert('The converter only accepts Number values. Please refresh your page and try again.')
 } else {
-	alert('In celsius, that equals: ' + celsius + ' degrees')
+  alert('In celsius, that equals: ' + celsius + ' degrees')
 }
 ```
 
