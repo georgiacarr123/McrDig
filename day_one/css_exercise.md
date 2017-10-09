@@ -9,7 +9,7 @@ You'll want to create a new CSS file (I've called mine `main.css`) in the same f
 ```html
 <head>
   ...
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 ```
 
