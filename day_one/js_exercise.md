@@ -4,11 +4,32 @@
 
 You will create a simple tool that takes a temperature from the user in Fahrenheit and converts it to Celsius. 
 
+You should be working in pairs for this exercise.
+
 ### Preparation
 
-In the command line, change directory into **~/Projects** and create a new directory called **temperatureConverter**.  Change directory into this folder, create an `index.html` file, save and populate the basic HTML structure (hint: `!` then `Tab`).
+In the command line, change directory into **~/Projects** and create a new directory called **temperatureConverter**.  
+
+Initialise a Git repository in the folder:
+
+```bash
+git init
+```
+
+Create a new repository on GitHub called **till** (**DON'T create with readme**).
+
+Set up your remotes. You want to set an origin linking to your remote repository, and another remote with your pair's name, linking to their repository (use the link in the address bar):
+
+```bash
+git remote add origin <linkToYourGitHubRepo>
+git remote add <partnerName> <linkToPartnerGitHubRepo>
+```
+
+:twisted_rightwards_arrows: **Decide initial driver and navigator roles between you. Remember: The driver shouldn't be looking at the walkthrough, and the navigator shouldn't be typing any code!!!**
 
 ### Getting started
+
+Inside your `temperatureConverter` folder, create an `index.html` file, save and populate the basic HTML structure (hint: `!` then `Tab`).
 
 To add JavaScript to the HTML document, you can add `script` tags inside the `body` tags, setting the `type` attribute’s value to `text/javascript`. We can now write JavaScript inside, and it will run when we open our webpage in the browser (so we don't have to keep writing our code in the Developer Tools console):
 
@@ -16,6 +37,13 @@ To add JavaScript to the HTML document, you can add `script` tags inside the `bo
 <script type="text/javascript">
 	// JavaScript code goes here
 </script>
+```
+
+This would be a good time for a commit:
+
+```bash
+git add index.html
+git commit -m "Initial commit"
 ```
 
 ### Prompting the user
@@ -36,7 +64,21 @@ Save your **index.html** file and open it in the browser. You should see:
 You might be thinking: “What’s going on here?”. Well, essentially we are calling a function `prompt` and we pass it an argument ('Please enter the temperature to convert in Fahrenheit:'). `prompt` then takes this argument and tells the browser to pop up a prompt with the passed argument displayed as the prompt’s message. The user types in their answer. This answer is the return value of the prompt function. This return value then gets assigned to the myName variable.
 ***
 
+This would be a good time for a commit:
+
+```bash
+git add index.html
+git commit -m "Prompt the user"
+git push
+```
+
 :twisted_rightwards_arrows: **Switch driver/navigator roles**
+
+New driver pulls:
+
+```bash
+git pull <partnerName> master
+```
 
 ### The formula
 
@@ -93,7 +135,21 @@ alert('In celsius, that equals: ' + celsius + ' degrees')
 You may have noticed that we’ve just used the `+` operator to add strings together. This is called string concatenation. JavaScript is clever enough to know that if the type of one of the values isn’t a number and the `+` operator is used then the two values should be appended together. If one of the values is a Number and the other a String then this is referred to as coercion (type conversion).
 ***
 
+This would be a good time for a commit:
+
+```bash
+git add index.html
+git commit -m "Convert temperature and alert user"
+git push
+```
+
 :twisted_rightwards_arrows: **Switch driver/navigator roles**
+
+New driver pulls:
+
+```bash
+git pull <partnerName> master
+```
 
 ### Handling edge cases
 
@@ -116,6 +172,20 @@ if (isNaN(celsius)) {
 
 Here we’ve just added conditional logic (if/else) to see if celsius is a Number or not. If a user enters a value for `fahrenheit` that isn’t a Number and this gets passed to the equation assigned to `celsius`, then `celsius` will equal the type of `NaN` (Not a Number) because you can’t do division and multiplication on the String type in JavaScript. 
 
+This would be a good time for a commit to finish off:
+
+```bash
+git add index.html
+git commit -m "Add number checking edge case"
+git push
+```
+
+The current person navigating should pull down the current drivers code at this stage so you both have the finished project:
+
+```bash
+git pull <partnerName> master
+```
+
 ### Practice
 
 If you have finished the above, then in your pairs follow the same principes to create a BMI (Body Mass Index) calculator. The formula for calculating BMI is:
@@ -132,6 +202,8 @@ Pair effectively! Remember, the driver should only be typing what the navigator 
 Don't feel as the driver that you have no input. If you disagree with what your navigator is telling you to do then explain your reasoning to them.
 
 If, as a navigator, you are unsure of what to tell your driver to do, then ask your driver if they have an approach they would take and try to guide them off of that approach. Don't however allow the driver to start coding without your instruction.
+
+Make commits whenever a change seems significant enough for a commit. 
 ***
 
 ### Challenge
