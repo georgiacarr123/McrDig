@@ -16,7 +16,7 @@ Initialise a Git repository in the folder:
 git init
 ```
 
-Create a new repository on GitHub called **till** (**DON'T create with readme**).
+Create a new repository on GitHub called **temperatureConverter** (**DON'T create with readme**).
 
 Set up your remotes. You want to set an origin linking to your remote repository, and another remote with your pair's name, linking to their repository (use the link in the address bar):
 
@@ -210,5 +210,5 @@ Make commits whenever a change seems significant enough for a commit.
 
 Encapsulate your code inside a function, and fire that function when a user presses a button.
 
-[JS Functions on W3Schools](https://www.w3schools.com/js/js_functions.asp)
-[Event Listeners in JavaScript](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
+* [JS Functions on W3Schools](https://www.w3schools.com/js/js_functions.asp)
+* [Event Listeners in JavaScript](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
