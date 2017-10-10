@@ -28,7 +28,14 @@ git remote add <partnerName> <linkToPartnerGitHubRepo>
 
 1. Create an index.html file and populate with the basic HTML structure.
 2. Create a `js/` folder and inside this folder create 3 empty files: `route.js`, `station.js`, and `tram.js`.
-3. Include the files in your `js` folder into your `index.html` with `script` tags.
+3. Include the files in your `js` folder into your `index.html` with `script` tags:
+
+```html
+<script src="js/station.js" type="text/javascript"></script>
+<script src="js/route.js" type="text/javascript"></script>
+<script src="js/tram.js" type="text/javascript"></script>
+```
+
 4. Add and commit your files to Git with an appropriate commit message.
 
 ## Creating Stations
