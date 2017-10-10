@@ -30,7 +30,7 @@
 * [Lecture: Constructor Prototype Pattern](https://docs.google.com/presentation/d/1Wrnto9tov6b1kAR5z3TYcVPa0GPm9-rz1fu1Oq__XD8/edit?usp=sharing)
 * [Exercise: Metrolink](day_two/metrolink/part1.md)
 
-### Bonus Walkthrough: AJAX (not backed up by lecture so you will need to read the reading materials)
+### Bonus Walkthrough: AJAX and jQuery (no lecture given so you will need to read the lecture slides and ask/Google for more information)
 
 * [Lecture: AJAX](https://docs.google.com/presentation/d/1XZLQQzPJ6mdYt3EXdb-6OMaPsc9TvKy35z2Lb3kCXkg/edit?usp=sharing)
 * [Exercise: Currency Converter](day_two/currency_converter/lesson1_page1.md)
