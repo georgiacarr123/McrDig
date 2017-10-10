@@ -19,3 +19,9 @@
 * [Flexbox Froggy](http://flexboxfroggy.com/)
 * [CSS Grid Garden](http://cssgridgarden.com/)
 * [Codecademy JavaScript track](https://www.codecademy.com/learn/introduction-to-javascript)
+
+## Day Two
+
+* [Lecture: Arrays, Iterators and Objects](https://docs.google.com/presentation/d/14fCamXxXbV7QCzpfxkYV-YaeQhdRc4Rb8aOuuAGMSKo/edit?usp=sharing)
+* [Exercise: Shopping List](day_two/shopping_list/part1.md)
+* [Exercise: Metrolink](day_two/metrolink/part1.md)
