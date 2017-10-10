@@ -1,6 +1,6 @@
 ## Deploying to GitHub Pages
 
-GitHub offer a service called *GitHub Pages* that allows us deploy basic HTML/JavaScript projects online by pushing to a GitHub repository. You are allowed one website per GitHub account (don't create multiple accounts - there are other ways to host websites).
+GitHub offer a service called [GitHub Pages](https://pages.github.com/) that allows us deploy basic HTML/JavaScript projects online by pushing to a GitHub repository. You are allowed one website per GitHub account (don't create multiple accounts - there are other ways to host websites).
 
 1. Go to [GitHub](https://github.com/) and click the **+** at the top and **New Repository**. 
 
