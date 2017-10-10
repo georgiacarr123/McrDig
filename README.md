@@ -41,3 +41,15 @@
 
 * [Deploying to GitHub Pages](deploy.md)
 * [tryGit](https://try.github.io/) - Interactive way to learn Git
+
+## Day Three
+
+### Morning
+
+* [Lecture: jQuery](https://docs.google.com/presentation/d/1q0PPFHq_FkJC3317iu_74uKMTq3PADGT2HyPq0YhI1c/edit?usp=sharing)
+* [Exercise: Metrolink UI](day_three/metrolink_ui/lesson2_page1.md)
+
+### Afternoon
+
+* [Lecture: TDD with Jasmine](https://docs.google.com/presentation/d/1qxsssQHiNiKs5VgQg5GgjzjrFBPTMBP83Xuv9f5H-ZU/edit?usp=sharing)
+* [Exercise: Cruise Ships](day_three/cruise_ships/lesson1_introduction.md)
