@@ -32,10 +32,9 @@
 
 ### Bonus Walkthrough: AJAX (not backed up by lecture so you will need to read the reading materials)
 
-* [HTTP GET and POST](https://www.w3schools.com/TAgs/ref_httpmethods.asp)
-* [AJAX Requests](https://www.w3schools.com/js/js_ajax_intro.asp)
+* [Lecture: AJAX](https://docs.google.com/presentation/d/1XZLQQzPJ6mdYt3EXdb-6OMaPsc9TvKy35z2Lb3kCXkg/edit?usp=sharing)
 * [Exercise: Currency Converter](day_two/currency_converter/lesson1_page1.md)
-* [jQuery](https://www.w3schools.com/jquery/)
+* [Lecture: jQuery](https://docs.google.com/presentation/d/1q0PPFHq_FkJC3317iu_74uKMTq3PADGT2HyPq0YhI1c/edit?usp=sharing)
 * [Exercise: Currency Converter UI](day_two/currency_converter/lesson2_page1.md)
 
 ### Continue Learning
