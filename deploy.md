@@ -8,7 +8,7 @@ GitHub offer a service called *GitHub Pages* that allows us deploy basic HTML/Ja
 
 3. Once you've given your repository its name, click **Create Repository**.
 
-4. Now you'll want to add a new remote to your existing local repository that points to the new repository. Inside the command line, whilst in your **currency-converter** project folder type the following:
+4. Now you'll want to add a new remote to your existing local repository that points to the new repository. Inside the command line, whilst in your project folder (which should have a git repo initialised inside of it) type the following:
 
 ```bash
 git remote add deploy <https://github.com/username/username.github.io>
