@@ -36,7 +36,7 @@
 * [AJAX Requests](https://www.w3schools.com/js/js_ajax_intro.asp)
 * [Exercise: Currency Converter](day_two/currency_converter/lesson1_page1.md)
 * [jQuery](https://www.w3schools.com/jquery/)
-* [Exercise: Currency Converter UI](day_two/currency_converter/lesson2_page2.md)
+* [Exercise: Currency Converter UI](day_two/currency_converter/lesson2_page1.md)
 
 ### Continue Learning
 
