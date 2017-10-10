@@ -92,7 +92,7 @@ Comment out the `spyOn` call in your test and run your tests again, refreshing t
 
 ## Red, green, REFACTOR
 
-By now we've had plenty of reds, and a few comforting greens. What we haven't done yet (because we haven't needed to) is refactor our code. Refactor simply means to go back and make the code better - it could be by cutting down the amount of code to make it easier to read, or by doing it a different way that might offer increased performance. Either way, we can rest assured now that we can *fearlessly* change our code - if we break it then our test suite Jasmine will tell us. 
+By now we've had plenty of reds, and a few comforting greens. What we haven't done yet (because we haven't needed to) is refactor our code. Refactor simply means to go back and make the code better - it could be by cutting down the amount of code to make it easier to read, or by doing it a different way that might offer increased performance. Either way, we can rest assured now that we can *fearlessly* change our code - if we break it then Jasmine's test runner will let us know. 
 
 We're going to take the opportunity to refactor `isStormy`. 
 
@@ -113,7 +113,7 @@ We're going to take the opportunity to refactor `isStormy`.
 ***
 :bulb:
 
-The `(Math.random() < 0.5)` statement contains a comparison operator, so it doesn't matter if it is in an `if` statement or not - it will always evaluate to `true` or `false`. Therefore we can just `return` the statement.
+The `(Math.random() < 0.5)` statement contains a comparison operator, so it doesn't matter if it is in an `if` statement or not - it will always evaluate to `true` or `false`. Therefore we can just `return` the expression.
 ***
 
 4. There is still one small issue and that is that we have a *magic number*. A magic number is a number that doesn't mean anything to the person reading the code. In this case we know `0.5` is the probability of non-stormy weather, but anybody else looking at our code won't know this. Add a new property `NOT_STORMY_PROBABILITY` to your constructor, and assign it 0.5:
@@ -133,7 +133,7 @@ Our property name `_NOT_STORMY_PROBABILITY` is all in uppercase here because it 
 5. Now change your return value to reflect the change:
 
 ```js
-  return (Math.random() < this._NOT_STORMY_PROBABILITY)
+return (Math.random() < this._NOT_STORMY_PROBABILITY)
 ```
 
 6. Run your tests again. Should still be green.

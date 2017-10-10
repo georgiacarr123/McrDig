@@ -4,7 +4,7 @@ In Test Driven Development, you write a test for your code before you write the 
 
 In this walkthrough we'll use Jasmine to test our methods (that we haven't written yet), and then once we've ran the test (and it fails), then we will write the code to make it pass. Our methods will all have `return` values so we have something to test against.
 
-This week we are going to make a `Dock` that can take `Ship` objects. There will be multiple `Dock`s that can take multiple `Ship`s, and our `Ship` will be able to sail to other `Dock`s. We won't be rendering anything to the DOM this week - we're purely going to create objects with methods that have return values and we'll be testing those return values.
+We are going to make a `Dock` that can take `Ship` objects. There will be multiple `Dock`s that can take multiple `Ship`s, and our `Ship` will be able to sail to other `Dock`s. We won't be rendering anything to the DOM - we're purely going to create objects with methods that have return values and we'll be testing those return values.
 
 ## Prep - both partners
 
