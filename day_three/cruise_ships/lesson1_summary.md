@@ -1,6 +1,6 @@
 ## Summary
 
-Congratulations on making it through the walkthrough - that was by far the toughest one yet.
+Congratulations on making it through - that was a tough one!
 
 ## Learning Objectives
 
