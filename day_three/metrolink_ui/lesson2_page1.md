@@ -150,3 +150,5 @@ var tram = new Tram(altrinchamToAshtonUnderLyne, altrinchamToAshtonUnderLyne.get
 ## Add, commit and push.
 
 :twisted_rightwards_arrows: **Switch Driver/Navigator roles.**
+
+[Continue to part 2](lesson2_page2.md)

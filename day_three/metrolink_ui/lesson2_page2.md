@@ -104,3 +104,5 @@ $.each(altrinchamToAshtonUnderLyne.getStations(), function (stationIndex, statio
 ## Add, commit and push.
 
 :twisted_rightwards_arrows: **Switch Driver/Navigator roles.**
+
+[Continue to part 3](lesson2_page3.md)

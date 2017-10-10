@@ -112,4 +112,6 @@ $('#reset').click(function () {
 
 ## Finished?
 
-Add some extra styling (or Bootstrap?), commit and push up, and then start on the assignment.
+Add some extra styling, commit and push up.
+
+:tada:
