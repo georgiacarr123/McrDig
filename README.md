@@ -35,6 +35,8 @@
 * [HTTP GET and POST](https://www.w3schools.com/TAgs/ref_httpmethods.asp)
 * [AJAX Requests](https://www.w3schools.com/js/js_ajax_intro.asp)
 * [Exercise: Currency Converter](day_two/currency_converter/lesson1_page1.md)
+* [jQuery](https://www.w3schools.com/jquery/)
+* [Exercise: Currency Converter UI](day_two/currency_converter/lesson2_page2.md)
 
 ### Continue Learning
 
