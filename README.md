@@ -24,4 +24,5 @@
 
 * [Lecture: Arrays, Iterators and Objects](https://docs.google.com/presentation/d/14fCamXxXbV7QCzpfxkYV-YaeQhdRc4Rb8aOuuAGMSKo/edit?usp=sharing)
 * [Exercise: Shopping List](day_two/shopping_list/part1.md)
+* [Lecture: Constructor Prototype Pattern](https://docs.google.com/presentation/d/1Wrnto9tov6b1kAR5z3TYcVPa0GPm9-rz1fu1Oq__XD8/edit?usp=sharing)
 * [Exercise: Metrolink](day_two/metrolink/part1.md)
