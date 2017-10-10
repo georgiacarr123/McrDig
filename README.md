@@ -30,6 +30,12 @@
 * [Lecture: Constructor Prototype Pattern](https://docs.google.com/presentation/d/1Wrnto9tov6b1kAR5z3TYcVPa0GPm9-rz1fu1Oq__XD8/edit?usp=sharing)
 * [Exercise: Metrolink](day_two/metrolink/part1.md)
 
+### Bonus Walkthrough: AJAX (not backed up by lecture so you will need to read the reading materials)
+
+* [HTTP GET and POST](https://www.w3schools.com/TAgs/ref_httpmethods.asp)
+* [AJAX Requests](https://www.w3schools.com/js/js_ajax_intro.asp)
+* [Exercise: Currency Converter](day_two/currency_converter/lesson1_page1.md)
+
 ### Continue Learning
 
 * [tryGit](https://try.github.io/) - Interactive way to learn Git
