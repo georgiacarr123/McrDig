@@ -39,5 +39,5 @@
 
 ### Continue Learning
 
-* [Deploying to GitHub](deploy.md)
+* [Deploying to GitHub Pages](deploy.md)
 * [tryGit](https://try.github.io/) - Interactive way to learn Git
