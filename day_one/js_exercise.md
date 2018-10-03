@@ -4,8 +4,6 @@
 
 You will create a simple tool that takes a temperature from the user in Fahrenheit and converts it to Celsius. 
 
-You should be working in pairs for this exercise.
-
 ### Preparation
 
 In the command line/Terminal, change directory into **~/Projects** and create a new directory called **temperature-converter**:
