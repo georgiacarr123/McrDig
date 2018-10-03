@@ -8,28 +8,22 @@ You should be working in pairs for this exercise.
 
 ### Preparation
 
-In the command line, change directory into **~/Projects** and create a new directory called **temperatureConverter**.  
-
-Initialise a Git repository in the folder:
+In the command line/Terminal, change directory into **~/Projects** and create a new directory called **temperature-converter**:
 
 ```bash
-git init
+cd Projects
+mkdir temperature-converter
 ```
-
-Create a new repository on GitHub called **temperatureConverter** (**DON'T create with readme**).
-
-Set up your remotes. You want to set an origin linking to your remote repository, and another remote with your pair's name, linking to their repository (use the link in the address bar):
-
-```bash
-git remote add origin <linkToYourGitHubRepo>
-git remote add <partnerName> <linkToPartnerGitHubRepo>
-```
-
-:twisted_rightwards_arrows: **Decide initial driver and navigator roles between you. Remember: The driver shouldn't be looking at the walkthrough, and the navigator shouldn't be typing any code!!!**
 
 ### Getting started
 
-Inside your `temperatureConverter` folder, create an `index.html` file, save and populate the basic HTML structure (hint: `!` then `Tab`).
+Inside your `temperatureConverter` folder, create an `index.html` file:
+
+```bash
+code index.html
+```
+
+Save the file, and populate the basic HTML structure (hint: `!` then `Tab`).
 
 To add JavaScript to the HTML document, you can add `script` tags inside the `body` tags, setting the `type` attribute’s value to `text/javascript`. We can now write JavaScript inside, and it will run when we open our webpage in the browser (so we don't have to keep writing our code in the Developer Tools console):
 
@@ -39,19 +33,12 @@ To add JavaScript to the HTML document, you can add `script` tags inside the `bo
 </script>
 ```
 
-This would be a good time for a commit:
-
-```bash
-git add index.html
-git commit -m "Initial commit"
-```
-
 ### Prompting the user
 
 JavaScript has built in functions - reusable blocks of code, which return a value when they’ve finished executing. Call one of JavaScript’s predefined functions `prompt`:
 
 ```javascript
-var fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
+const fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
 ```
 
 Save your **index.html** file and open it in the browser. You should see:
@@ -64,22 +51,6 @@ Save your **index.html** file and open it in the browser. You should see:
 You might be thinking: “What’s going on here?”. Well, essentially we are calling a function `prompt` and we pass it an argument ('Please enter the temperature to convert in Fahrenheit:'). `prompt` then takes this argument and tells the browser to pop up a prompt with the passed argument displayed as the prompt’s message. The user types in their answer. This answer is the return value of the prompt function. This return value then gets assigned to the myName variable.
 ***
 
-This would be a good time for a commit:
-
-```bash
-git add index.html
-git commit -m "Prompt the user"
-git push
-```
-
-:twisted_rightwards_arrows: **Switch driver/navigator roles**
-
-New driver pulls:
-
-```bash
-git pull <partnerName> master
-```
-
 ### The formula
 
 We’ve asked the user for their temperature in Fahrenheit, and we’ve assigned their answer to the `fahrenheit` variable. Now we need to write a formula that takes this variable and uses it in an equation to work out the Celsius equivalent.
@@ -87,8 +58,8 @@ We’ve asked the user for their temperature in Fahrenheit, and we’ve assigned
 To convert Fahrenheit to Celsius, you need to take the Fahrenheit amount, subtract 32, multiply by 5 and then divide by 9. Let’s write this up in code, assigning our formula to a new variable `celsius`:
 
 ```javascript
-var fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
-var celsius = ((fahrenheit - 32) * 5) / 9
+const fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
+const celsius = ((fahrenheit - 32) * 5) / 9
 ```
 
 Your `fahrenheit` variable will equal the user’s input, and the `celsius` variable will now equal the `fahrenheit` variable converted to Celsius. 
@@ -117,8 +88,8 @@ If you are interested in reading more then MDN has a great reference [here](http
 We have the converted value stored in our `celsius` variable. Now we just need to present it to the user:
 
 ```javascript
-var fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
-var celsius = ((fahrenheit - 32) * 5) / 9
+const fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
+const celsius = ((fahrenheit - 32) * 5) / 9
 
 alert('In celsius, that equals: ' + celsius + ' degrees')
 ```
@@ -135,33 +106,17 @@ alert('In celsius, that equals: ' + celsius + ' degrees')
 You may have noticed that we’ve just used the `+` operator to add strings together. This is called string concatenation. JavaScript is clever enough to know that if the type of one of the values isn’t a number and the `+` operator is used then the two values should be appended together. If one of the values is a Number and the other a String then this is referred to as coercion (type conversion).
 ***
 
-This would be a good time for a commit:
-
-```bash
-git add index.html
-git commit -m "Convert temperature and alert user"
-git push
-```
-
-:twisted_rightwards_arrows: **Switch driver/navigator roles**
-
-New driver pulls:
-
-```bash
-git pull <partnerName> master
-```
-
 ### Handling edge cases
 
-Edge cases are extreme scenarios we need to handle. By extreme, we mean we don’t want these scenarios to happen. For example, if you entered into the above prompt a String of text such as ‘hello’ and tried to execute the code then the alert would come back with: 
+Edge cases are extreme scenarios we need to handle. By extreme, we mean we don’t ideally want to allow these scenarios to happen. For example, if you entered into the above prompt a String of text such as ‘hello’ and tried to execute the code then the alert would come back with: 
 
 ![Edge case example](https://mcr.codes/wp-content/uploads/2017/06/Screen-Shot-2017-06-19-at-01.27.38.png)
 
 This isn’t the most informative thing for us to display to our user - how are they supposed to know what they’ve done wrong? Fortunately in JavaScript we can check if a value isn’t a number with `isNaN(string)`. `isNaN` takes a type and attempts to convert it to a Number. If it fails to convert the type then it returns a Boolean of `true` (the type is not and cannot be a Number), otherwise if it can convert the type to a Number it will return `true`. Let’s see how we can use `isNan` to handle edge cases in our application:
 
 ```javascript
-var fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
-var celsius = ((fahrenheit - 32) * 5) / 9
+const fahrenheit = prompt('Please enter the temperature to convert in Fahrenheit:')
+const celsius = ((fahrenheit - 32) * 5) / 9
 
 if (isNaN(celsius)) {
   alert('The converter only accepts Number values. Please refresh your page and try again.')
@@ -172,39 +127,13 @@ if (isNaN(celsius)) {
 
 Here we’ve just added conditional logic (if/else) to see if celsius is a Number or not. If a user enters a value for `fahrenheit` that isn’t a Number and this gets passed to the equation assigned to `celsius`, then `celsius` will equal the type of `NaN` (Not a Number) because you can’t do division and multiplication on the String type in JavaScript. 
 
-This would be a good time for a commit to finish off:
-
-```bash
-git add index.html
-git commit -m "Add number checking edge case"
-git push
-```
-
-The current person navigating should pull down the current drivers code at this stage so you both have the finished project:
-
-```bash
-git pull <partnerName> master
-```
-
 ### Practice
 
-If you have finished the above, then in your pairs follow the same principes to create a BMI (Body Mass Index) calculator. The formula for calculating BMI is:
+If you have finished the above, then follow the same principes to create a BMI (Body Mass Index) calculator. The formula for calculating BMI is:
 
 `Body weight in kilograms divided by height in metres squared (a.k.a metres height x metres height).`
 
 You will need two prompts for this: one that stores the user's weight, and another that stores the user's height.
-
-***
-:bulb:
-
-Pair effectively! Remember, the driver should only be typing what the navigator tells them to type, and the two of you should be swapping regularly (no more than every 15 minutes or so) so that both of you have chance to drive and navigate. 
-
-Don't feel as the driver that you have no input. If you disagree with what your navigator is telling you to do then explain your reasoning to them.
-
-If, as a navigator, you are unsure of what to tell your driver to do, then ask your driver if they have an approach they would take and try to guide them off of that approach. Don't however allow the driver to start coding without your instruction.
-
-Make commits whenever a change seems significant enough for a commit. 
-***
 
 ### Challenge
 
@@ -213,6 +142,6 @@ Encapsulate your code inside a function, and fire that function when a user pres
 * [JS Functions on W3Schools](https://www.w3schools.com/js/js_functions.asp)
 * [Event Listeners in JavaScript](https://www.w3schools.com/js/js_htmldom_eventlistener.asp)
 
-### One more challenge
+### Done? Here's one more...
 
 * [FizzBuzz](fizzbuzz/exercise.md)
