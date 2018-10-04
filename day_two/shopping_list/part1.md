@@ -75,9 +75,9 @@ The `-u` set's the upstream to `origin master`. In future you can just use `git 
 Partner pulls
 ------
 
-1) Firstly the person who is now driving will need to pull their partner's changes. To do this, they will need to add their partner's GitHub repo as a *remote* (replacing `<partersName>` with your partner's name/nickname (one word!!)):
+1) Firstly the person who is now driving will need to pull their partner's changes. To do this, they will need to add their partner's GitHub repo as a *remote* (replacing `<partnersUsername>` with your partner's GitHub username):
 ```
-git remote add <partnersName> git+ssh://git@github.com/<username>/shoppingList.git
+git remote add <partnersUsername> https://github.com/<partnersUsername>/shoppingList
 ```
 
 2) Now do `git pull <partnersName> master` to pull from your partner's master branch.
