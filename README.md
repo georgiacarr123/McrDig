@@ -42,8 +42,8 @@
 
 ## Day Four
 
-TBC
+* [Lecture: AJAX](https://docs.google.com/presentation/d/1XZLQQzPJ6mdYt3EXdb-6OMaPsc9TvKy35z2Lb3kCXkg/edit?usp=sharing)
 
 ## Day Five
 
-TBC
+You should continue working on a JavaScript frontend for your projects.
