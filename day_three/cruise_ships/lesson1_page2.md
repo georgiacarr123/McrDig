@@ -15,25 +15,25 @@ When we sail from a port, the `_currentPort` of `ship` won't be anything - it's 
 ```js
 it('can set sail from the port', function () {
 
-})
+});
 ```
 
 2. Inside the function block, call `setSail` on `ship`:
 
 ```js
 it('can set sail from the port', function () {
-  ship.setSail()
-})
+  ship.setSail();
+});
 ```
 
 3. Now we want to assert that the ship's `_currentPort` is a falsy value. We can pass `getCurrentPort` to `expect` as we did before, but for our assertion we can use the `.toBeFalsy()` method:
 
 ```js
 it('can set sail from the port', function () {
-  ship.setSail()
+  ship.setSail();
 
-  expect(ship.getCurrentPort()).toBeFalsy()
-})
+  expect(ship.getCurrentPort()).toBeFalsy();
+});
 ```
 
 4. Now run your tests. You should have an error:
@@ -45,11 +45,12 @@ it('can set sail from the port', function () {
 6. Run your tests again. You should see: `Expected Object({  }) to be falsy.`. We're expecting an object to be falsy, which means a port object is still assigned to `_currentPort`. Inside your `setSail` method, set the `_currentPort` property to `null`:
 
 ```js
+Ship.prototype = {
+  ...
   setSail: function () {
     this._currentPort = null
-
-    return
-  }
+  },
+};
 ```
 
 7. Run your tests again. You should be passing:
@@ -63,15 +64,15 @@ We now have a ship that can set sail, but we don't have any way of docking it.
 1. We want to dock our ship at a different port from the port we set sail from. Therefore, above the `beforeEach` callback, define another variable called `arrivalPort` and inside the `beforeEach` callback, set it to a new instance of `Port`:
 
 ```js
-  var port
-  var arrivalPort
-  var ship
+  let port;
+  let arrivalPort;
+  let ship;
 
   beforeEach(function () {
-    port = new Port()
-    arrivalPort = new Port()
-    ship = new Ship(port)
-  })
+    port = new Port();
+    arrivalPort = new Port();
+    ship = new Ship(port);
+  });
 ```
 
 2. Time to create another test. Add a new `it` call and pass in the description `can dock at a port`:
@@ -79,25 +80,25 @@ We now have a ship that can set sail, but we don't have any way of docking it.
 ```js
 it ('can dock at a port', function () {
 
-})
+});
 ``` 
 
 3. Inside the anonymous function block, call the `dock` method on `ship` and pass in `arrivalPort`:
 
 ```js
 it ('can dock at a port', function () {
-  ship.dock(arrivalPort)
-})
+  ship.dock(arrivalPort);
+});
 ``` 
 
 4. Underneath create a new expectation, passing in `ship.getCurrentPort()`, and assert that the returned value is equal to `arrivalPort`:
 
 ```js
 it ('can dock at a port', function () {
-  ship.dock(arrivalPort)
+  ship.dock(arrivalPort);
 
-  expect(ship.getCurrentPort()).toBe(arrivalPort)
-})
+  expect(ship.getCurrentPort()).toBe(arrivalPort);
+});
 ``` 
 
 5. Run the tests and watch it fail! `TypeError: ship.dock is not a function`.
