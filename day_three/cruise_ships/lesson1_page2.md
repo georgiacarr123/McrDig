@@ -48,7 +48,7 @@ it('can set sail from the port', function () {
 Ship.prototype = {
   ...
   setSail: function () {
-    this._currentPort = null
+    this._currentPort = null;
   },
 };
 ```
