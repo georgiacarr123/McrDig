@@ -78,7 +78,9 @@ describe('Ship', function () {
 
 *Ship* is the description we gave in step 3. It says `No specs found`, because we haven't actually written any tests yet.
 
-5. Jasmine has a function called `beforeEach` that takes a single parameter of a callback function. Inside the anonymous function passed to `describe`, call the `beforeEach` function, passing it an anonymous function:
+5. Jasmine has a function called `beforeEach`, the purpose of which is to specify a block of setup code to run before each test in the `describe` block.  We will use it to create new instances of the objects we will use in our tests, so that each test starts with a clean slate.
+
+Inside the anonymous function passed to `describe`, call the `beforeEach` function, passing it an anonymous function:
 
 ```js
 describe('Ship', function () {
@@ -89,8 +91,6 @@ describe('Ship', function () {
 
 });
 ```
-
-The purpose of `beforeEach` is to specify a block of code to run before each test. We will use it to create new instances of the objects we will use in our tests.
 
 6. Inside `describe`'s anonymous function, define two new variables: `port` and `ship`. Don't assign them values. Inside the `beforeEach`: create a new instance of `Port` and assign it to the `port` variable; create a new instance of `Ship` and assign it to the `ship` variable; and finally pass `port` into the `Ship` constructor:
 
