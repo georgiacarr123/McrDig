@@ -15,52 +15,66 @@ I don’t want my ship to set sail if the weather is stormy.
 ```js
 describe('Weather', function () {
 
-})
+});
 ```
 
-4. Inside the `describe` callback, declare a new variable `weather`. Now in a `beforeEach` call, pass an anonymous function, and inside instantiate a new Weather object, assigning it to `weather`:
+4. Inside the `describe` callback, declare a new variable `weather`. Now in a `beforeEach` call, pass an anonymous function, and inside instantiate a new `Weather` object, assigning it to `weather`:
 
 ```js
 describe('Weather', function () {
-  var weather
+  let weather
 
   beforeEach(function () {
-    weather = new Weather()
-  })
-})
+    weather = new Weather();
+  });
+});
 ```
 
 ## isStormy
 
 `isStormy` will make a random decision as to whether the weather is stormy or not, using JavaScript's [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random). `Math.random()` will return a floating-point (decimal place) number between 0 and 1. We will assume that any number less than (`<`) 0.5 will equate in stormy weather (not a great probability for our holidaymakers!). 
 
-Because the probability is random, we face a problem by which we don't actually know what the outcome of our `isStormy` method is, which begs the question: how do we test it? The answer is to listen in (*spy*) on `Math.random()`. When it's called, we will modify its return value so we can dictate what `isStormy` returns.
+Because the probability is random, we face a problem by which we don't actually know what the outcome of our `isStormy` method is, which begs the question: how do we test it? 
+
+The answer is to listen in (*spy*) on `Math.random()`.
+Jasmine has a `spyOn` function, which we can use to replace object methods with fake implementations. When . these fake methods are called,we can make assertions about whether they were called or not, what arguments they were called with etc.
+
+We can also specify the return value of the spy methods. This will allow us to dictate what `isStormy` returns.
 
 1. Inside our `describe`, after the `beforeEach`, call `it` and pass in a description of `can be stormy`. Pass in an anonymous function as the second argument:
 
 ```js
   it('can be stormy', function () {
 
-  })
+  });
 ```
 
-2. Now we need to create our spy. Call Jasmine's `spyOn` function. The first argument is the object you wish to spy on, and the second argument is the method on that object. We want to listen in on the `Math` object, and it's `random` method. The `spyOn` function returns an object with an `and` method, which also returns an object with a `returnValue` method, which will modify the `random` method's return value. Lets have a look:
+2. Now we need to create our spy. Call Jasmine's `spyOn` function. The first argument is the object you wish to spy on, and the second argument is the method on that object. We want to listen in on the `Math` object, and it's `random` method. 
+```js
+  it('can be stormy', function () {
+    spyOn(Math, 'random');
+  });
+```
+
+We have now replaced the real `Math.random` with a fake version that we can configure.
+
+The `spyOn` function returns an object with an `and` property, which is also an object. The `and` property has a `returnValue` method, which will modify the `random` method's return value. Lets have a look:
 
 ```js
   it('can be stormy', function () {
-    spyOn(Math, 'random').and.returnValue(0)
-  })
+    spyOn(Math, 'random').and.returnValue(0);
+  });
 ```
 
 Here we've told `Math.random()` to return 0, because 0 is under 0.5 and therefore will equate to stormy. Even if we lower our probability of stormy weather it will still be above 0, so 0 is a safe choice.
 
-3. Now we've modified the behaviour of `Math.random()`, we can write our assertion. We want to `expect` `weather.isStormy()` *to be truthy*:
+3. Now we've modified the behaviour of `Math.random()`, we can write our assertion. We want to `expect` `weather.isStormy()` *to be true*:
 
 ```js
   it('can be stormy', function () {
-    spyOn(Math, 'random').and.returnValue(0)
+    spyOn(Math, 'random').and.returnValue(0);
 
-    expect(weather.isStormy()).toBeTruthy()
+    expect(weather.isStormy()).toBe(true);
   })
 ```
 
@@ -70,7 +84,7 @@ Here we've told `Math.random()` to return 0, because 0 is under 0.5 and therefor
 
 6. Run your tests again. You should now have one error: `TypeError: weather.isStormy is not a function`. Add the `isStormy` method to your `Weather` prototype (leave it empty!). 
 
-7. Run your tests again. Your error should now read: `Expected undefined to be truthy.`. Jasmine is now telling us our method is returning `undefined`. We want it to return a Boolean of `true` or `false`. Inside the `isStormy` method, add conditional logic that will return `true` if `Math.random()` is less than 0.5 or `false` otherwise:
+7. Run your tests again. Your error should now read: `Expected undefined to be true.`. Jasmine is now telling us our method is returning `undefined`. We want it to return a Boolean of `true` or `false`. Inside the `isStormy` method, add conditional logic that will return `true` if `Math.random()` is less than 0.5 or `false` otherwise:
 
 ```js
   isStormy: function () {
@@ -92,7 +106,7 @@ Comment out the `spyOn` call in your test and run your tests again, refreshing t
 
 ## Red, green, REFACTOR
 
-By now we've had plenty of reds, and a few comforting greens. What we haven't done yet (because we haven't needed to) is refactor our code. Refactor simply means to go back and make the code better - it could be by cutting down the amount of code to make it easier to read, or by doing it a different way that might offer increased performance. Either way, we can rest assured now that we can *fearlessly* change our code - if we break it then Jasmine's test runner will let us know. 
+By now we've had plenty of reds, and a few comforting greens. What we haven't done yet is refactor our code. Refactor simply means to go back and make the code better - it could be by cutting down the amount of code to make it easier to read, or by doing it a different way that might offer increased performance. Either way, we can rest assured now that we can *fearlessly* change our code - if we break it then Jasmine's test runner will let us know. 
 
 We're going to take the opportunity to refactor `isStormy`. 
 
@@ -116,7 +130,7 @@ We're going to take the opportunity to refactor `isStormy`.
 The `(Math.random() < 0.5)` statement contains a comparison operator, so it doesn't matter if it is in an `if` statement or not - it will always evaluate to `true` or `false`. Therefore we can just `return` the expression.
 ***
 
-4. There is still one small issue and that is that we have a *magic number*. A magic number is a number that doesn't mean anything to the person reading the code. In this case we know `0.5` is the probability of non-stormy weather, but anybody else looking at our code won't know this. Add a new property `NOT_STORMY_PROBABILITY` to your constructor, and assign it 0.5:
+4. There is still one small issue and that is that we have a *magic number*. A magic number is a number that doesn't mean anything to the person reading the code. In this case we know `0.5` is the probability of non-stormy weather, but anybody else looking at our code won't know this. Add a new property `_NOT_STORMY_PROBABILITY` to your constructor, and assign it 0.5:
 
 ```js
 function Weather () {
