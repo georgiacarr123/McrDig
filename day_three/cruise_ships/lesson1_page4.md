@@ -10,7 +10,7 @@ I don’t want my ship to set sail if the weather is stormy.
 
 We've created a `Weather` object, but we haven't actually implemented our user story, which states that our ship can't set sail in stormy weather.
 
-The dilemna now is that we will need to give a `Ship` access to the `Weather` object so it can make that decision, but it doesn't make sense for a `Ship` to have `Weather`. It makes more sense that a `Port` would have `Weather`. 
+The dilemma now is that we will need to give a `Ship` access to the `Weather` object so it can make that decision, but it doesn't make sense for a `Ship` to have `Weather`. It makes more sense that a `Port` would have `Weather`. 
 
 ## Ports have Weather
 
@@ -20,7 +20,7 @@ The dilemna now is that we will need to give a `Ship` access to the `Weather` ob
 ```js
 describe('Port', function () {
 
-})
+});
 ```
 
 3. Inside the `describe` callback, declare two variables: `weather` and `port`.
@@ -29,14 +29,14 @@ describe('Port', function () {
 
 ```js
 describe('Port', function () {
-  var weather
-  var port
+  let weather
+  let port
 
   beforeEach(function () {
-    weather = new Weather()
-    port = new Port(weather)
-  })
-})
+    weather = new Weather();
+    port = new Port(weather);
+  });
+});
 ```
 
 5. Now add a new test (`it`) with a description `has weather`:
@@ -44,25 +44,25 @@ describe('Port', function () {
 ```js
 it('has weather', function () {
 
-})
+});
 ```
 
 6. Inside the callback `expect` `port.getWeather()` `toBe` `weather`:
 ```js
 it('has weather', function () {
-  expect(port.getWeather()).toBe(weather)
-})
+  expect(port.getWeather()).toBe(weather);
+});
 ```
 
 (Notice how that code almost reads like plain English. It's why we use meaningful names for our variables, functions and objects!)
 
 7. Run your tests. You should have `TypeError: port.getWeather is not a function`. Go ahead and add the method to your `Port` prototype.
 
-8. You should now have a new error: `Expected undefined to equal Object({ _NOT_STORMY_PROBABILITY: 0.5 }).`. Lets add code to `Port.js` to make our test pass. The constructor should have a parameter of `weather`. Set a property of `_weather` and assign to it the weather `parameter`:
+8. You should now have a new error: `Expected undefined to equal Object({ _NOT_STORMY_PROBABILITY: 0.5 }).`. Lets add code to `Port.js` to make our test pass. The constructor should have a parameter of `weather`. Set a property of `_weather` and assign to it the `weather` parameter:
 
 ```js
 function Port (weather) {
-  this._weather = weather
+  this._weather = weather;
 }
 ```
 
@@ -70,7 +70,7 @@ function Port (weather) {
 
 ```js
   getWeather: function () {
-    return this._weather
+    return this._weather;
   }
 ```
 
@@ -85,17 +85,17 @@ Now we can finally add tests to our `ShipSpec.js` to ensure ships don't sail in 
 1. First of all, In `ShipSpec.js` declare a new `weather` variable at the top of the `describe` callback, and modify the `new Port()` constructor assigned to `port` so you are passing in the `weather` variable:
 
 ```js
-  var weather
-  var port
-  var arrivalPort
-  var ship
+  let weather;
+  let port;
+  let arrivalPort;
+  let ship;
 
   beforeEach(function () {
-    weather = new Weather()
-    port = new Port(weather)
-    arrivalPort = new Port()
-    ship = new Ship(port)
-  })
+    weather = new Weather();
+    port = new Port(weather);
+    arrivalPort = new Port();
+    ship = new Ship(port);
+  });
 ```
 
 2. Add a new test `doesn't set sail in stormy weather`:
@@ -103,15 +103,15 @@ Now we can finally add tests to our `ShipSpec.js` to ensure ships don't sail in 
 ```js
   it('doesn\'t set sail in stormy weather', function () {
 
-  })
+  });
 ```
 
 3. Now we need to `spyOn` `weather` `isStormy` `and` `returnValue` `true`:
 
 ```js
   it('doesn\'t set sail in stormy weather', function () {
-    spyOn(weather, 'isStormy').and.returnValue(true)
-  })
+    spyOn(weather, 'isStormy').and.returnValue(true);
+  });
 ```
 
 ***
@@ -124,11 +124,11 @@ Before, we had to `spyOn` `Math.random()`. This was to ensure that aside from th
 
 ```js
   it('doesn\'t set sail in stormy weather', function () {
-    spyOn(Weather, 'isStormy').and.returnValue(true)
+    spyOn(Weather, 'isStormy').and.returnValue(true);
 
     expect(function () {
-      ship.setSail()
-    }).toThrowError('cannot sail in stormy weather')
+      ship.setSail();
+    }).toThrowError('cannot sail in stormy weather');
   })
 ```
 
@@ -147,12 +147,10 @@ Here we've had to wrap our `ship.setSail()` in an anonymous function. The reason
 ```js
   setSail: function () {
     if (this.getCurrentPort().getWeather().isStormy()) {
-      throw new Error('cannot sail in stormy weather')
+      throw new Error('cannot sail in stormy weather');
     }
 
-    this._currentPort = null
-
-    return
+    this._currentPort = null;
   }
 ```
 
@@ -168,11 +166,11 @@ Throw!? [Throw on W3Schools (basic explanation)](https://www.w3schools.com/jsref
 
 ```js
   it('can set sail from the port', function () {
-    spyOn(weather, 'isStormy').and.returnValue(true)
+    spyOn(weather, 'isStormy').and.returnValue(false);
 
-    ship.setSail()
+    ship.setSail();
 
-    expect(ship.getCurrentPort()).toBeFalsy()
+    expect(ship.getCurrentPort()).toBeFalsy();
   })
 ```
 
