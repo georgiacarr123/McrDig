@@ -75,7 +75,7 @@ Here we've told `Math.random()` to return 0, because 0 is under 0.5 and therefor
     spyOn(Math, 'random').and.returnValue(0);
 
     expect(weather.isStormy()).toBe(true);
-  })
+  });
 ```
 
 4. Run your tests. The first error in the stack trace should be `ReferenceError: Weather is not defined`. 
@@ -87,13 +87,15 @@ Here we've told `Math.random()` to return 0, because 0 is under 0.5 and therefor
 7. Run your tests again. Your error should now read: `Expected undefined to be true.`. Jasmine is now telling us our method is returning `undefined`. We want it to return a Boolean of `true` or `false`. Inside the `isStormy` method, add conditional logic that will return `true` if `Math.random()` is less than 0.5 or `false` otherwise:
 
 ```js
+Weather.prototype = {
   isStormy: function () {
     if (Math.random() < 0.5) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
-  }
+  },
+};
 ```
 
 8. Run your tests. You should be all green :green_heart:.
@@ -119,7 +121,7 @@ We're going to take the opportunity to refactor `isStormy`.
 2. Now change your `if` to `return`:
 
 ```js
-  return (Math.random() < 0.5)
+  return (Math.random() < 0.5);
 ```
 
 3. Run your tests. They should still be green.
@@ -134,7 +136,7 @@ The `(Math.random() < 0.5)` statement contains a comparison operator, so it does
 
 ```js
 function Weather () {
-  this._NOT_STORMY_PROBABILITY = 0.5
+  this._NOT_STORMY_PROBABILITY = 0.5;
 } 
 ```
 
@@ -147,7 +149,7 @@ Our property name `_NOT_STORMY_PROBABILITY` is all in uppercase here because it 
 5. Now change your return value to reflect the change:
 
 ```js
-return (Math.random() < this._NOT_STORMY_PROBABILITY)
+return (Math.random() < this._NOT_STORMY_PROBABILITY);
 ```
 
 6. Run your tests again. Should still be green.
