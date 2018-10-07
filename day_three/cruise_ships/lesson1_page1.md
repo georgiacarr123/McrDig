@@ -97,8 +97,8 @@ The purpose of `beforeEach` is to specify a block of code to run before each tes
 ```js
 describe('Ship', function () {
 
-  var port
-  var ship
+  let port
+  let ship
 
   beforeEach(function () {
     port = new Port()
@@ -123,8 +123,8 @@ Here we store our variables in memory but don't assign them a value. That's beca
 ```js
 describe('Ship', function () {
 
-  var port
-  var ship
+  let port
+  let ship
 
   beforeEach(function () {
     port = new Port()
