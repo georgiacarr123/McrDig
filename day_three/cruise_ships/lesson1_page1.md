@@ -70,7 +70,7 @@ I want my ship to have a starting port.
 ```js
 describe('Ship', function () {
 
-})
+});
 ```
 4. Open up `SpecRunner.html` in Chrome. You should see the following:
 
@@ -85,9 +85,9 @@ describe('Ship', function () {
 
   beforeEach(function () {
 
-  })
+  });
 
-})
+});
 ```
 
 The purpose of `beforeEach` is to specify a block of code to run before each test. We will use it to create new instances of the objects we will use in our tests.
@@ -97,15 +97,15 @@ The purpose of `beforeEach` is to specify a block of code to run before each tes
 ```js
 describe('Ship', function () {
 
-  let port
-  let ship
+  let port;
+  let ship;
 
   beforeEach(function () {
-    port = new Port()
-    ship = new Ship(port)
-  })
+    port = new Port();
+    ship = new Ship(port);
+  });
 
-})
+});
 ```
 
 Because we're only going to set the starting port of a ship once - and this will likely be when we first create an instance of `Ship` - then it makes sense to set this in the `Ship`'s constructor, hence we've passed `port` into the constructor above.
@@ -123,27 +123,27 @@ Here we store our variables in memory but don't assign them a value. That's beca
 ```js
 describe('Ship', function () {
 
-  let port
-  let ship
+  let port;
+  let ship;
 
   beforeEach(function () {
-    port = new Port()
-    ship = new Ship(port)
-  })
+    port = new Port();
+    ship = new Ship(port);
+  });
 
   it('has a starting port', function () {
 
-  })
+  });
 
-})
+});
 ```
 
 8. Now we have a test, we need to add an *assertion*. Assertion's assert whether a method's return value is what we expect it to be. We can pass our method calls into Jasmine's `expect` function, which returns an object with assertion methods. The assertion method we will use is `.toBe`, which takes a single argument: the value we expect our method to return. Go ahead and add the following:
 
 ```js
   it('has a starting port', function () {
-    expect(ship.getCurrentPort()).toBe(port)
-  })
+    expect(ship.getCurrentPort()).toBe(port);
+  });
 ```
 
 So we **expect** our `ship`'s (instance of `Ship`) `getCurrentPort` method to return a value that is equal to (`toBe`) `port`.
@@ -161,9 +161,12 @@ Create a `Port.js` file in `src/` and create a new constructor and prototype for
 12. Refresh your `SpecRunner.html`. The only error you should have now is `TypeError: ship.getCurrentPort is not a function`. Our test is now instructing us that we need to make a `getCurrentPort` method on the `Ship` prototype. Go ahead and create this method in `Ship.js` in your prototype. Leave it empty - we only want to fix the current error, which is that the method doesn't exist:
 
 ```js
-getCurrentPort: function () {
+Ship.prototype = {
+ ...
+  getCurrentPort: function () {
 
-}
+  },
+};
 ```
 
 13. Run your tests again. You should have a new error `Error: Expected undefined to equal Object({  })`. Jasmine is telling us that firstly the return value of our `getCurrentPort` method is undefined (`ship.getCurrentPort` has evaluated to `undefined` inside the `expect` function). Secondly, it's telling us that it's expecting an object, which is correct - we are asserting against the `port` object. 
