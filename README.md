@@ -40,10 +40,7 @@
 * [Lecture: TDD with Jasmine](https://docs.google.com/presentation/d/1qxsssQHiNiKs5VgQg5GgjzjrFBPTMBP83Xuv9f5H-ZU/edit?usp=sharing)
 * [Exercise: Cruise Ships](day_three/cruise_ships/lesson1_introduction.md)
 
-## Day Four
+## Days Four and Five
 
 * [Lecture: AJAX](https://docs.google.com/presentation/d/1XZLQQzPJ6mdYt3EXdb-6OMaPsc9TvKy35z2Lb3kCXkg/edit?usp=sharing)
-
-## Day Five
-
-You should continue working on a JavaScript frontend for your projects.
+* [Exercise: Reddit Clone](day_four_five/README.md)
