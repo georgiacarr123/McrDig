@@ -125,3 +125,5 @@ Steps to complete:
 ***
 :innocent: You should now try this out. In your `index.html` file, use your existing `DataSource` instance to make a POST request. Look at the examples above if you aren't sure.
 ***
+
+## [Step 2: DOM](step2.md)
