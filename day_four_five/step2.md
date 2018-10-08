@@ -61,3 +61,5 @@ You should be able to achieve this on your own, but please ask for help if you g
 ***
 :innocent: You should now try this out. In your `index.html` file, add a `div` to your HTML and give it a unique `id`. Instantiate your `DOM` object, and use the `render` method on the instance to replace the contents of your div (nothing) with `<h1>Hello World</h1>`.
 ***
+
+## [Step 3: Post Component](step3.md)
