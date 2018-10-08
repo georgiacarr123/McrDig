@@ -48,6 +48,7 @@ Steps to complete:
 
 <details>
   <summary>Spoiler: Code - Don't copy and paste!</summary>
+
   ```js
   get: function (endpoint, callback) { // 1
     const xhr = new XMLHttpRequest(); // 2
@@ -63,4 +64,5 @@ Steps to complete:
     xhr.send(); // 8
   }
   ```
+  
 </details>
