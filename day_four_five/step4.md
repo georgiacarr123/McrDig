@@ -70,4 +70,4 @@ You should see the posts outputted to your `div#root` element.
 You will need to ensure that you import the `Posts.js` file into your `index.html` file **after** `Post.js`, as `Posts` relies on the `Post` method already being in memory, and JavaScript is procedural - that is, it runs line by line.
 ***
 
-## [Step 5: Displaying Posts](step5.md)
+## [Step 5: Challenge: Displaying Posts](step5.md)
