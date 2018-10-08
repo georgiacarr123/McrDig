@@ -64,5 +64,9 @@ Steps to complete:
     xhr.send(); // 8
   }
   ```
-  
+
 </details>
+
+***
+:innocent: You should now try this out. Create an `index.html` file, include in your `DataSource.js` file, and have a go instantiating a new `DataSource` and making a `GET` request. Look at the examples above if you aren't sure.
+***
