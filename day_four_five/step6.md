@@ -75,8 +75,9 @@ You can parse this query string into a JavaScript object using `URLSearchParams`
     const dataSource = new DataSource('https://jsonplaceholder.typicode.com');
     
     const searchParams = new URLSearchParams(window.location.search);
+    const postId = searchParams.get('id');
 
-    dataSource.get(`/posts/${searchParams.id}`, function (post) {
+    dataSource.get(`/posts/${postId}`, function (post) {
       dom.render(Post(post));
     });
   </script>
