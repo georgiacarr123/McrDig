@@ -29,14 +29,12 @@ function Post (post) {
 }
 ```
 
-It will become clearer in later steps why we've linked to `post.html?id=${post.id}` so don't worry too much about it now.
-
 If you're observant, you'll notice we are only using the posts `title`, but not the `id` or `body`.
 
 Add the following features to the `Post` component:
 
 1. Display the post data's `body` text below the title.
-2. Wrap the `<h3>` title in an `<a>` tag to turn it into a link. Make the link navigate to `post.html?id=${post.id}` when clicked.
+2. Add an `id` to the `<div>` tag, setting its value to `post-${post.id}`
 
 ## Try it out
 
