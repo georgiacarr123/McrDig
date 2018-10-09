@@ -1,6 +1,6 @@
 # Post Component
 
-We can now render ay HTML string to the DOM by passing it into our `dom.render` method. 
+We can now render any HTML string to the DOM by passing it into our `dom.render` method. 
 
 For this application, any HTML rendered to the DOM by JavaScript will be encapsulated inside its own function for re-usability. We will call these functions _components_.
 
