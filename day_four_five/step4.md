@@ -42,7 +42,7 @@ Have a go at creating this on your own, then compare to our solution below.
 
 ## Try it out
 
-In your `index.html` file, include in the component file. Inside your `DOM` instance's `render` method (create a new instance if you deleted your practice code from earlier), call the `Posts` component function, passing in the following object:
+In your `index.html` file, include in the component file. Where you were previously calling your `DOM` instance's `render` method and passing in the `Post` component with a single `post` object, instead now call the `Posts` component function, passing in the following array:
 
 ```js
 [{
