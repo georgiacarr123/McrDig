@@ -12,7 +12,8 @@ The resulting code should look very similar to your `index.html` file.
 
 <details>
   <summary>Spoiler</summary>
-  ```html
+
+```html
 ...
 <body>
   <div id="root"></div>
@@ -30,6 +31,7 @@ The resulting code should look very similar to your `index.html` file.
 </body>
 ...
   ```
+
 </details>  
 
 
