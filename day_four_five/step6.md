@@ -10,17 +10,28 @@ Create a new file `post.html` in the project root directory. In this file, make 
 
 The resulting code should look very similar to your `index.html` file.
 
+<details>
+  <summary>Spoiler</summary>
 
-Code:
+  ```html
+...
+<body>
+  <div id="root"></div>
+  <script src="components/Post.js"></script>
+  <script src="lib/DOM.js"></script>
+  <script src="lib/DataSource.js"></script>
+  <script>
+    const dom = new DOM('#root');
+    const dataSource = new DataSource('https://jsonplaceholder.typicode.com');
 
-```js
-const dom = new DOM('#root');
-const dataSource = new DataSource('https://jsonplaceholder.typicode.com');
-const queryParams = new URLSearchParams(window.location.search);
-const postId = queryParams.get('id');
-dataSource.get(`/posts/${postId}`, function (post) {
-  dom.render(Post(post));
-})
-```
+    dataSource.get('/posts/1', function (post) {
+      dom.render(Post(post));
+    });
+  </script>
+</body>
+...
+  ```
+
+</details>
 
 * [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
