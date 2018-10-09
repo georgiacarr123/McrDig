@@ -39,6 +39,7 @@
 
 * [Lecture: TDD with Jasmine](https://docs.google.com/presentation/d/1qxsssQHiNiKs5VgQg5GgjzjrFBPTMBP83Xuv9f5H-ZU/edit?usp=sharing)
 * [Exercise: Cruise Ships](day_three/cruise_ships/lesson1_introduction.md)
+* [Exercise: Calculator](day_three/assignment.md)
 
 ## Days Four and Five
 
