@@ -6,6 +6,8 @@ The challenge is to, on the individual post page, retrieve from the API a list o
 
 The API endpoint for retrieving comments is `GET /posts/{post.id}/comments`.
 
+Take some time investigating the data returned from this endpoint to see what the structure is, and what data each comment contains.
+
 You will also need to create some new components which return the correct html for displaying the comments.
 
 Remember, we only want to display the comments on the `post.html` page, not on the `index.html` page.
