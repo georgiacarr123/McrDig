@@ -67,7 +67,7 @@ You should see the posts outputted to your `div#root` element.
 
 One cool takeaway from what we have achieved here is that we are able to **compose** our components - we have rendered a `Post` component from inside of `Posts`.
 
-Expanding on this, we might be able to decompose the parts of our page even further - we could potentially make an `Image` component maybe, or a `Header` and `Footer` component which can be reused over and over, to save us from rewriting the same HTML multiple times.
+Expanding on this, we might be able to decompose the parts of our page even further - we could potentially make an `Image` component, or maybe `Header` and `Footer` components which can be reused over and over, to save us from rewriting the same HTML multiple times.
 
 ***
 :exclamation:
