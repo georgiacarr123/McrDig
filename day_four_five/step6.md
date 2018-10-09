@@ -12,7 +12,6 @@ The resulting code should look very similar to your `index.html` file.
 
 <details>
   <summary>Spoiler</summary>
-
   ```html
 ...
 <body>
@@ -31,7 +30,19 @@ The resulting code should look very similar to your `index.html` file.
 </body>
 ...
   ```
+</details>  
 
-</details>
+
+### Navigating to the new page
+Once you've made the page, update your `Post` component, so that the post title (the `h3` tag) acts as a link to `page.html`.
+
+#### Try it out
+Open your index.html page and click on one of the new links - you should now be taken to the new page, and see the details just for the first post.
+
+The next problem we have to solve is that no matter which link we click on, we are always shown the same post, not te one we clcked on.
+
+This is because we are always making a request for `posts/1`. We need to update this code so that the request is made for the correct post id, not just `1` every time.
+
+To do this, we can utilize the URL.
 
 * [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
