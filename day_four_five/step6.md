@@ -86,3 +86,4 @@ You can parse this query string into a JavaScript object using `URLSearchParams`
 
 Once you have done this, you should see the correct data being loaded when you navigate to the `post.html` page.
 
+## [Step 7: Displaying Comments](step7.md)
