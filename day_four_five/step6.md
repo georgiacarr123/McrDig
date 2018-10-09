@@ -45,6 +45,44 @@ The next problem we have to solve is that no matter which link we click on, we a
 
 This is because we are always making a request for `posts/1`. We need to update this code so that the request is made for the correct post id, not just `1` every time.
 
-To do this, we can utilize the URL.
+To do this, we can utilize the URL, in particular by utilizing a **query string** (also known as a search parameter). This is the part of the url starting with a `?`. It's formatted as a set of key-value pairs in the format `?key=value`.
 
+If you go to Google and perform a search (search for "ducks"), you will see that the main URL is `https://www.google.co.uk/search`, and this is followed by some query string params (including `q=ducks`). Each param is separated by an `&`.
+
+We can access and use these params in our JavaScript code to add extra flexibility to our page.
+
+Firstly, update the link URL in your `Post` component from `page.html` to `page.html?id=${post.id}`.
+
+When you click on the link now, you should see the correct ID for the post appearing in the browser address bar. Now we need to use this.
+
+The next thing we need to do is, in the `post.html` page, grab this `id` parameter value from the URL, and update our `GET` request to request the data for this post, instead of the one with an id of `1`.
+
+You can get information about the current URL using the `window.location` object. Take a look at this object, and see if you can find the information we need.
+
+You can parse this query string into a JavaScript object using `URLSearchParams`, which has a number of methods for interacting with a query string.
+
+### Resources
+* [`window.location`](https://developer.mozilla.org/en-US/docs/Web/API/Location)
+* [Anatomy of a URL](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL)
 * [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+
+<details>
+  <summary>Spoiler</summary>
+
+```html
+  <script>
+    const dom = new DOM('#root');
+    const dataSource = new DataSource('https://jsonplaceholder.typicode.com');
+    
+    const searchParams = new URLSearchParams(window.location.search);
+
+    dataSource.get(`/posts/${searchParams.id}`, function (post) {
+      dom.render(Post(post));
+    });
+  </script>
+  ```
+
+</details>  
+
+Once you have done this, you should see the correct data being loaded when you navigate to the `post.html` page.
+
